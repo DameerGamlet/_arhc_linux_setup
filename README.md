@@ -18,26 +18,20 @@ sudo systemctl enable --now NetworkManager
 
 Это основные опции, которые будут применяться в этой инструкции.
 
-Установка топ первых необходимых инстументов:
+### Установка топ первых необходимых инстументов:
 
 TODO: расширить
 
 ```shell
-sudo pacman -R gnome-maps gnome-weather gnome-tour gnome-connections
-```
-```shell
 sudo pacman -Syu;
 ```
+
 ```shell
-sudo pacman -S git neovim ranger tilix tldr gparted bat zsh ark htop cpupower curl dconf dconf-editor eza fastfetch fd ffmpeg firefox flameshot java-runtime-common lazygit obsidian yazi steam syncthing telegram-desktop tldr vim virtualbox vlc fzf obs-studio
+sudo pacman -R gnome-maps gnome-weather gnome-tour gnome-connections
 ```
 
-Настройка git:
-
-TODO: добавить описание от создания  токена до активного использования
-
 ```shell
-todo
+sudo pacman -S git neovim ranger tilix tldr gparted bat zsh ark htop cpupower curl dconf dconf-editor fastfetch fd ffmpeg firefox flameshot java-runtime-common lazygit obsidian yazi steam syncthing telegram-desktop tldr vim virtualbox vlc fzf obs-studio exa shotwell libreoffice-still libreoffice-still-ru gnome-tweaks
 ```
 
 Установить paru:
@@ -54,7 +48,43 @@ makepkg -si;
 
 ```shell
 paru -Syu;
-paru -S auto-cpufreq cpupower-gui jetbrains-toolbox lazydocker microsoft-edge-stable-bin ocs-url postman-bin stacer sysz ttf-ms-fonts visual-studio-code-bin webcord yandex-browser
+paru -S auto-cpufreq cpupower-gui jetbrains-toolbox lazydocker microsoft-edge-stable-bin ocs-url postman-bin stacer sysz ttf-ms-fonts visual-studio-code-bin webcord yandex-browser extension-manager
+```
+
+### zsh как систему по умолчанию:
+
+```shell
+chsh -s $(which zsh)
+```
+ohmyzsh:
+
+```shell
+cd ~/repos;
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
+```
+
+powerlevel10k:
+
+```shell
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k;
+```
+(настройка `p10k configure`)
+
+Решение конфликтов:
+
+```shell
+cd ~/repos;
+git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete;
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions;
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting;
+```
+
+Настройка git:
+
+TODO: добавить описание от создания  токена до активного использования
+
+```shell
+todo
 ```
 
 ### Добавить раскладку клавиатуры
@@ -113,78 +143,19 @@ TODO: установить java. gradle
 - Windows Gestures
 - WTMB (Windows Thumbnails)
 
-##### ExtensionManager
-Установить:
-    - Dash to Dock 
-    - AppIndication and KStatusNotifierItem Support
-    - Clickboard Indicator
-    - Vitals
-    - Lock Keys
-    
-Включить:
-    - Applications Menu
-    - User Themes
-    - Native Window Placement
-    
-### ! Tweaks !
-    - Appearance:
-        Курсор: 
-        Иконки: 
-        Shell: 
-        Legacy Applications: 
-        
+## Tweaks
     - Windows:
         Titlebar Buttons:
             Minimize: true
             Senter New Windows: true
+    
 ## ! Настройка нормального шрифта !
 $ mkdir ~/.fonts
 Шрифты имеются в HDD
 
 Потом надо указать в терминале шрифт
 
-## ! ZSH !
-Установка была ранее
 
-#### Выбрать ZSH как систему по умолчанию:
-$ chsh -s $(which zsh)
-
-Дальше перезагрузка и настройка zsh
-
-#### Установка oh my zsh
-$ cd ~/Repos
-$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-#### Установка темы powerlevel10k
-$ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-
-#### Настройка powerlevel10k
-Добавить в .zshrc
-
-```
-ZSH_THEME="powerlevel10k/powerlevel10k"
-```
-
-Использовать иные настройки из HDD
-
-Будет много конфликтор:
-
-### 1) использовать exa
-$ sudo pacman -S exa
-
-### 2) Скачать плагины
-[oh-my-zsh] plugin 'zsh-autocomplete' not found
-$ cd ~/Repos
-$ git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
-```
-# добавить в .zshrc
-source ~/Repos/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-```
-
-[oh-my-zsh] plugin 'zsh-autosuggestions' not found
-$ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-[oh-my-zsh] plugin 'zsh-syntax-highlighting' not found
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 ## ! NvChad !
 
