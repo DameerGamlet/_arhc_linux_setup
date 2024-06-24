@@ -20,18 +20,25 @@ sudo systemctl enable --now NetworkManager
 
 ### Установка топ первых необходимых инстументов:
 
-TODO: расширить
+Обновить:
 
 ```shell
 sudo pacman -Syu;
 ```
 
+Базовые приложения к удалению:
+
 ```shell
 sudo pacman -R gnome-maps gnome-weather gnome-tour gnome-connections
 ```
 
+Базовые приложения к установке: 
+
 ```shell
-sudo pacman -S git neovim ranger tilix tldr gparted bat zsh ark htop cpupower curl dconf dconf-editor fastfetch fd ffmpeg firefox flameshot java-runtime-common lazygit obsidian yazi steam syncthing telegram-desktop tldr vim virtualbox vlc fzf obs-studio exa shotwell libreoffice-still libreoffice-still-ru gnome-tweaks
+sudo pacman -S git neovim ranger tilix tldr gparted bat zsh ark htop cpupower \
+    curl dconf dconf-editor fastfetch fd ffmpeg firefox flameshot java-runtime-common \
+    lazygit obsidian yazi steam syncthing telegram-desktop tldr vim virtualbox vlc fzf \
+    obs-studio exa shotwell libreoffice-still libreoffice-still-ru gnome-tweaks
 ```
 
 Установить paru:
@@ -48,7 +55,20 @@ makepkg -si;
 
 ```shell
 paru -Syu;
-paru -S auto-cpufreq cpupower-gui jetbrains-toolbox lazydocker microsoft-edge-stable-bin ocs-url postman-bin stacer sysz ttf-ms-fonts visual-studio-code-bin webcord yandex-browser extension-manager
+paru -S auto-cpufreq \
+    cpupower-gui \
+    jetbrains-toolbox \
+    lazydocker \
+    microsoft-edge-stable-bin \
+    ocs-url \
+    postman-bin \
+    stacer \
+    sysz \
+    ttf-ms-fonts \
+    visual-studio-code-bin \
+    webcord \
+    yandex-browser \
+    extension-manager
 ```
 
 ### zsh как систему по умолчанию:
@@ -110,14 +130,18 @@ ILoveCandypacman -S ntfs-3g
 #### Yay
 Репо: https://github.com/Jguer/yay
 
-$ mkdir ~/Repos; cd ~/Repos; git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+```shell
+mkdir ~/Repos;
+cd ~/Repos; 
+git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+```
 
 ## ! Настройки системы !
 		
 ### Настройка монтирования к HDD
 
 ```shell
-sudo pacman -S ntfs-3g % мне это было достаточно
+sudo pacman -S ntfs-3g
 ```
 
 ### SDKMAN
@@ -155,40 +179,25 @@ $ mkdir ~/.fonts
 
 Потом надо указать в терминале шрифт
 
-
-
 ## ! NvChad !
 
-$ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+```shell
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+```
 
 ## ! Docker !
-$ sudo pacman -S docker docker-compose
-$ sudo systemctl enable --now docker
-$ sudo groupadd docker; sudo usermod -aG docker $USER; newgrp docker
+
+```shell
+sudo pacman -S docker docker-compose;
+sudo systemctl enable --now docker;
+sudo groupadd docker; 
+sudo usermod -aG docker $USER;
+newgrp docker
+```
 
 # ! VirtualBox !
 $ sudo pacman -S virtualbox
 1) virtualbox-host-dkms 2) virtualbox-host-modules-arch
 Выбрать 2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
