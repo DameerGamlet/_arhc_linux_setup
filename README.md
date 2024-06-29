@@ -6,7 +6,19 @@
 
 ## Установка
 
-TODO: написать процесс установки с использованием archinstall (от добавление WIFI, до запуска дистрибутива).
+1. скачать дистрибутив, добавить установочную флешку:
+
+`sudo dd if=./archlinux-2023.06.01-x86_64.iso of=/dev/sdb conv=fsync oflag=direct status=progress`
+
+Настроить вай фай:
+
+```shell
+iwctl
+[iwd]# station wlan0 get-networks
+[iwd]# station wlan0 connect <Name of WiFi access point>
+[iwd]# exit
+ping 1.1.1.1
+```
 
 ## Действия после установки Arch Linux
 
