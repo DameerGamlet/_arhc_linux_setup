@@ -25,7 +25,9 @@ ping 1.1.1.1
 Настройка интернета:
 
 ```shell
-sudo systemctl enable --now NetworkManager
+sudo pacman -Syyu;
+sudo pacman -S networkmanager;
+sudo systemctl enable --now NetworkManager;
 ```
 
 Это основные опции, которые будут применяться в этой инструкции.
@@ -41,17 +43,21 @@ sudo pacman -Syu;
 Базовые приложения к удалению:
 
 ```shell
-sudo pacman -R gnome-maps gnome-weather gnome-tour gnome-connections
+sudo pacman -R gnome-maps gnome-weather gnome-tour gnome-connections gnome-software gnome-contacts gnome-music
 ```
 
-Базовые приложения к установке: 
+Базовые приложения к установке во время установки: 
 
 ```shell
-sudo pacman -S git neovim ranger tilix tldr gparted bat zsh ark htop cpupower \
-    curl dconf dconf-editor fastfetch fd ffmpeg firefox flameshot java-runtime-common \
-    lazygit obsidian yazi steam syncthing telegram-desktop tldr vim virtualbox vlc fzf \
-    obs-studio exa shotwell libreoffice-still libreoffice-still-ru gnome-tweaks
+sudo pacman -S git tilix firefox vim
 ```
+
+Базовые приложения к установке после установки: 
+
+```shell
+sudo pacman -S neovim ranger tldr gparted bat zsh ark cpupower dconf-editor fastfetch fd flameshot java-runtime-common lazygit obsidian yazi steam syncthing telegram-desktop tldr virtualbox vlc fzf obs-studio exa shotwell libreoffice-still libreoffice-still-ru
+```
+
 
 Установить paru:
 
