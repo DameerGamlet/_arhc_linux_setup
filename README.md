@@ -1,5 +1,7 @@
 # Установка и настройка моего Arch Linux откружения
 
+thema: https://www.gnome-look.org/p/1267246
+
 ## Цель
 
 Получить удобную установку и настройку Arch Linux приложения с минимальными усилиями.
@@ -55,9 +57,8 @@ sudo pacman -S git tilix firefox vim
 Базовые приложения к установке после установки: 
 
 ```shell
-sudo pacman -S neovim ranger tldr gparted bat zsh ark cpupower dconf-editor fastfetch fd flameshot java-runtime-common lazygit obsidian yazi steam syncthing telegram-desktop tldr virtualbox vlc fzf obs-studio exa shotwell libreoffice-still libreoffice-still-ru
+sudo pacman -S neovim ranger tldr gparted bat zsh ark cpupower dconf-editor fastfetch fd flameshot java-runtime-common lazygit obsidian yazi steam syncthing telegram-desktop tldr virtualbox vlc fzf obs-studio exa shotwell libreoffice-still libreoffice-still-ru openssh
 ```
-
 
 Установить paru:
 
@@ -73,6 +74,12 @@ makepkg -si;
 
 ```shell
 paru -Syu;
+paru -S ocs-url extension-manager sysz ttf-ms-fonts visual-studio-code-bin yandex-browser
+```
+
+В следующую очередь:
+
+```shell
 paru -S auto-cpufreq \
     cpupower-gui \
     jetbrains-toolbox \
