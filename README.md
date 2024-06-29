@@ -220,9 +220,24 @@ sudo usermod -aG docker $USER;
 newgrp docker
 ```
 
-# ! VirtualBox !
-$ sudo pacman -S virtualbox
-1) virtualbox-host-dkms 2) virtualbox-host-modules-arch
-Выбрать 2
+## Файл подкачки
 
+```shell
+sudo dd if=/dev/zero of=/swapfile bs=1M count=16384 status=progress;
+sudo chmod 600 /swapfile;
+sudo mkswap /swapfile;
+sudo swapon /swapfile;
+```
+
+❯ sudo nvim /etc/fstab
+
+`/swapfile none swap defaults 0 0`
+
+❯ sudo sysctl vm.swappiness=15
+
+`vm.swappiness = 15`
+
+❯ echo 'vm.swappiness=10' | sudo tee /etc/sysctl.d/99-sysctl.conf
+
+`vm.swappiness=10`
 
