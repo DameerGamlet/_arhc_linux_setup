@@ -57,7 +57,7 @@ sudo pacman -S git tilix firefox vim
 Базовые приложения к установке после установки: 
 
 ```shell
-sudo pacman -S neovim ranger tldr gparted bat zsh ark cpupower dconf-editor fastfetch fd flameshot java-runtime-common lazygit obsidian yazi steam syncthing telegram-desktop tldr virtualbox vlc fzf obs-studio exa shotwell libreoffice-still libreoffice-still-ru openssh
+sudo pacman -S neovim ranger tldr gparted bat zsh ark cpupower dconf-editor fastfetch fd flameshot java-runtime-common lazygit obsidian yazi steam syncthing telegram-desktop tldr virtualbox vlc fzf obs-studio exa shotwell libreoffice-still libreoffice-still-ru openssh wl-clipboard
 ```
 
 Установить paru:
